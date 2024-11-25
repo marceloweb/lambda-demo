@@ -1,0 +1,6 @@
+{
+    "Environment": "dev",
+    "S3BucketName": "lambdademo-dev-bucket",
+    "Label": ":::DEV:::"
+}
+  

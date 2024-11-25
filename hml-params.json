@@ -1,0 +1,6 @@
+{
+    "Environment": "hml",
+    "S3BucketName": "lambdademo-hml-bucket",
+    "Label": ":::HML:::"
+}
+  

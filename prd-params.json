@@ -1,0 +1,6 @@
+{
+    "Environment": "prd",
+    "S3BucketName": "lambdademo-prd-bucket",
+    "Label": ":::PRD:::"
+}
+  

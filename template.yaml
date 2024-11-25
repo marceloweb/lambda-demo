@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Resources:
+  DemoLambdaFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: !Sub "demo-lambda-function-${Environment}"
+      Handler: app.lambda_function.lambda_handler
+      Runtime: python3.10
+      MemorySize: 128
+      Timeout: 3
+      Environment:
+        Variables:
+          ENV: !Ref Environment
+          LABEL: !Ref Label
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - hml
+      - prd
+    Description: 'Escolha o ambiente: dev, hml ou prd'
+  Label:
+    Type: String
+    Description: 'Valor de teste'
+    Default: "Valor default"

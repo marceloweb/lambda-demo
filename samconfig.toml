@@ -1,0 +1,32 @@
+version = 0.1
+
+[default.build]
+use-container = true
+
+[dev.deploy.parameters]
+stack_name = "lambda-demo-stack-dev"
+s3_bucket = "lambda-demo-devops"
+s3_prefix = "dev/"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+
+
+[hml.deploy.parameters]
+stack_name = "lambda-demo-stack-hml"
+s3_bucket = "lambda-demo-devops"
+s3_prefix = "hml/"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+
+[prd.deploy.parameters]
+stack_name = "lambda-demo-stack-prd"
+s3_bucket = "lambda-demo-devops"
+s3_prefix = "prd/"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
