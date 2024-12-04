@@ -1,5 +1,5 @@
 ---
-name: Deploy Lambda using SAM CLI
+name: Deploy Lambda using SAM CLI - Test
 
 on:
   push:
