@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     config = get_config()
     environment = os.environ.get("ENV", "unknown")
     label = os.getenv('LABEL', 'No label defined')
-    print(f"Running in environment::: {environment}")
+    print(f"Running in environment: ===> {environment}")
     
     response = {
         "statusCode": 200,

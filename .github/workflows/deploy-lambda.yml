@@ -47,8 +47,3 @@ jobs:
       - name: Deploy SAM Application
         run: |
           python3 deploy.py dev
-
-      # 6. (Opcional) Verifique o status após o deploy
-      - name: Verify Lambda Deployment
-        run: |
-          aws lambda get-function --function-name lambda-demo
