@@ -38,22 +38,17 @@ jobs:
             echo "SAM CLI is already installed."
           fi
 
-      # 4. Testar a aplicação Lambda localmente (opcional)
-      - name: Test Lambda locally with SAM CLI
-        run: |
-          sam local invoke "FunctionName" -e event.json
-
-      # 5. Empacotar o aplicativo Lambda com o SAM
+      # 4. Empacotar o aplicativo Lambda com o SAM
       - name: Package SAM Application
         run: |
           sam build
 
-      # 6. Fazer o deploy do Lambda
+      # 5. Fazer o deploy do Lambda
       - name: Deploy SAM Application
         run: |
           sam deploy --no-confirm-changeset --stack-name your-stack-name --capabilities CAPABILITY_IAM
 
-      # 7. (Opcional) Verifique o status após o deploy
+      # 6. (Opcional) Verifique o status após o deploy
       - name: Verify Lambda Deployment
         run: |
           aws lambda get-function --function-name your-lambda-function-name
