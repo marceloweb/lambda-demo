@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read      
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,7 +23,7 @@ jobs:
 
       # 2. Configurar as credenciais da AWS
       - name: Set up AWS CLI credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: ${{ secrets.AWS_ROLE }}
           aws-region: us-east-1
