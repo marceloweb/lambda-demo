@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     response = {
         "statusCode": 200,
         "body": json.dumps({
-            "message": f"Lambda Executado no Ambiente {config['db_name']}! Hello from {environment} enviroment! LABEL: {label}",
+            "message": f"Hello from {environment} enviroment! LABEL: {label}",
             "db_host": config['db_host'],
             "api_url": config['api_url'],
             "input": event
