@@ -26,5 +26,5 @@ parameter_overrides = load_parameters(environment)
 
 # Rodar o comando sam deploy com os parâmetros carregados
 subprocess.run([
-    "sam", "deploy", "--config-env", environment, "--parameter-overrides", parameter_overrides
-])
+    "sam", "deploy", "--config-env", environment, "--parameter-overrides", parameter_overrides, "--no-confirm-changeset"
+], check=True)

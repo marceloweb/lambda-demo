@@ -26,5 +26,5 @@ Parameters:
     Description: 'Escolha o ambiente: dev, hml ou prd'
   Label:
     Type: String
-    Description: 'Valor de teste'
-    Default: "Valor default"
+    Description: 'Valor de teste 1'
+    Default: "Valor default 1"
