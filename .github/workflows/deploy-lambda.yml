@@ -46,7 +46,7 @@ jobs:
       # 5. Fazer o deploy do Lambda
       - name: Deploy SAM Application
         run: |
-          python3 deploy.py env=dev
+          python3 deploy.py dev
 
       # 6. (Opcional) Verifique o status após o deploy
       - name: Verify Lambda Deployment
