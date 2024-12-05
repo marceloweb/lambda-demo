@@ -29,9 +29,14 @@ jobs:
       # 3. Instalar o SAM CLI
       - name: Install SAM CLI
         run: |
-          curl --silent --location https://github.com/aws/aws-sam-cli/releases/download/v1.73.0/aws-sam-cli-linux-x86_64.zip -o sam-cli.zip
-          unzip sam-cli.zip -d sam-cli
-          sudo ./sam-cli/install
+          if ! command -v sam &> /dev/null; then
+            echo "SAM CLI not found. Installing..."
+            curl --silent --location https://github.com/aws/aws-sam-cli/releases/download/v1.73.0/aws-sam-cli-linux-x86_64.zip -o sam-cli.zip
+            unzip sam-cli.zip -d sam-cli
+            sudo ./sam-cli/install
+          else
+            echo "SAM CLI is already installed."
+          fi
 
       # 4. Testar a aplicação Lambda localmente (opcional)
       - name: Test Lambda locally with SAM CLI
